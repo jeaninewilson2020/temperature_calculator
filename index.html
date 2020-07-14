@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Celsius to Kelvin Temperature Calculator</h1>
+    <div class="calculation-box">
+        <div class="child-container">
+        <!-- accepts a numeric input-->
+        <div class="label">
+            
+        <form id="form">
+        <label for="degrees">Number of Degrees:</label>
+        </div>
+        
+        <input type="text" id="degrees" required/>
+        </form>
+         
+       <div class="label">
+        <label for="unit-1">Convert from:</label>
+        </div>
+
+        <select name="number" id="unit-1">
+            <option value="celsius">Celsius</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        <div class="label">
+        <label for="unit-2">Convert to:</label>
+        </div>
+
+        <select name="number" id="unit-2">
+            <option value="celsius">Celsius</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        
+        <!-- calculates the input on click-->
+        <div class="label">
+        <input type="submit" onsubmit="" value="Calculate!" id="calculate" aria-controls="output input"/>
+        </div>
+        </div>
+    </div>
+
+    <div class="conversion-box">
+        <h2>Your Conversion</h2>
+        <h3>Input:</h3>
+        <output name="input" for="degrees" form="form" id="input"></output>
+    
+        <!-- dynamically updates the OUTPUT when the CALCULATE button is clicked -->
+        <h3>Output:</h3>
+        <output name="conversion" for="degrees" form="form" id="output"></output>
+       
+    </div>
+
+
+</body>
