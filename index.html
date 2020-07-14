@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,200&display=swap" rel="stylesheet">
+    <title>Temperature Calculator</title>
 </head>
 
 <body>
@@ -14,14 +15,14 @@
     <div class="calculation-box">
         <div class="child-container">
         <!-- accepts a numeric input-->
+        <form id="form">
         <div class="label">
             
-        <form id="form">
-        <label for="degrees">Number of Degrees:</label>
+        <label for="inputDegrees">Number of Degrees:</label>
+      
+        <input type="number" id="inputDegrees" required/>
+    
         </div>
-        
-        <input type="text" id="degrees" required/>
-        </form>
          
        <div class="label">
         <label for="unit-1">Convert from:</label>
@@ -42,21 +43,23 @@
         
         <!-- calculates the input on click-->
         <div class="label">
-        <input type="submit" onsubmit="" value="Calculate!" id="calculate" aria-controls="output input"/>
+        <input type="submit" onclick="return calculateTemp();" value="Calculate!" id="calculate" aria-controls="output input"/>
         </div>
-        </div>
+        
+     </form>
+     </div>
     </div>
 
     <div class="conversion-box">
         <h2>Your Conversion</h2>
         <h3>Input:</h3>
-        <output name="input" for="degrees" form="form" id="input"></output>
+        <output name="input" for="IDplaceholder" form="form" id="input"></output>
     
         <!-- dynamically updates the OUTPUT when the CALCULATE button is clicked -->
         <h3>Output:</h3>
-        <output name="conversion" for="degrees" form="form" id="output"></output>
+        <output name="conversion" for="IDplaceholder" form="form" id="output"></output>
        
     </div>
 
-
+    <script src="script.js" async></script>
 </body>
