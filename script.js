@@ -1,5 +1,5 @@
 
-
+const inputCelsius = document.getElementById('inputDegrees').value; 
 
 function getKelvin (input) {
    const celsius = Math.floor(input); 
@@ -12,9 +12,29 @@ function getKelvin (input) {
 
 }
 
+function calculateTemp() {
+   // Generates a new row of data each time the calculate button is clicked 
+   const tableBody = document.getElementById("tbody"); 
+   const row = tableBody.insertRow(0);
+   const cell1 = row.insertCell(0);
+   const cell2 = row.insertCell(1);
+   const cell3 = row.insertCell(2); 
 
+   cell1.innerHTML = document.getElementById('inputDegrees').value;
+   cell2.innerHTML = getKelvin(document.getElementById('inputDegrees').value);
+   cell3.innerHTML = "Weather Symbol"; 
 
+   // Prevents auto refresh on the page 
+   const form = document.getElementById("form"); 
+    function handleForm(event) {
+       event.preventDefault(); 
+    }
+    form.addEventListener('submit', handleForm); 
+}
+
+/*
  function calculateTemp() {
+    generateData(); 
     // Calls the function above with the value from inputDegrees as its value 
     const outputKelvin = getKelvin(document.getElementById('inputDegrees').value);
     //Gets the output and displays it at the bottom of the page 
@@ -23,7 +43,7 @@ function getKelvin (input) {
 
     //Gets the input and displays it at the bottom of the page
     //Set inputDegrees to our inputCelsius variable 
-    const inputCelsius = document.getElementById('inputDegrees').value; 
+    //const inputCelsius = document.getElementById('inputDegrees').value; 
     sessionStorage.setItem("inputElement", inputCelsius); 
     document.getElementById("input").innerHTML = sessionStorage.getItem("inputElement"); 
     
@@ -48,9 +68,9 @@ function getKelvin (input) {
        sessionStorage.setItem("autosave", finalOutput.value); 
       
    }); 
+}
 */
 
-}
 
 
 
