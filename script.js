@@ -32,6 +32,7 @@ function calculateTemp() {
     form.addEventListener('submit', handleForm); 
 }
 
+//Session Storage info 
 /*
  function calculateTemp() {
     generateData(); 
