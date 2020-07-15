@@ -12,6 +12,8 @@ function getKelvin (input) {
 
 }
 
+
+
  function calculateTemp() {
     // Calls the function above with the value from inputDegrees as its value 
     const outputKelvin = getKelvin(document.getElementById('inputDegrees').value);
