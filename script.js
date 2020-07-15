@@ -15,10 +15,17 @@ function getKelvin (input) {
  function calculateTemp() {
     // Calls the function above with the value from inputDegrees as its value 
     const outputKelvin = getKelvin(document.getElementById('inputDegrees').value);
-    //Gets the output but doesn't stay on the DOM 
+    //Gets the output and displays it at the bottom of the page 
     sessionStorage.setItem("outputElement", outputKelvin); 
     document.getElementById('output').innerHTML = sessionStorage.getItem("outputElement"); 
+
+    //Gets the input and displays it at the bottom of the page
+    //Set inputDegrees to our inputCelsius variable 
+    const inputCelsius = document.getElementById('inputDegrees').value; 
+    sessionStorage.setItem("inputElement", inputCelsius); 
+    document.getElementById("input").innerHTML = sessionStorage.getItem("inputElement"); 
     
+    // Prevent auto refreshing of the form 
     const form = document.getElementById("form"); 
     function handleForm(event) {
        event.preventDefault(); 
